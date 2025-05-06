@@ -9,7 +9,6 @@ import windowStateKeeper from 'electron-window-state'
 import { join } from 'path'
 
 import icon from '../../../build/icon.png?asset'
-import { titleBarOverlayDark, titleBarOverlayLight } from '../config'
 import { locales } from '../utils/locales'
 import { configManager } from './ConfigManager'
 import { initSessionUserAgent } from './WebviewService'
@@ -67,7 +66,7 @@ export class WindowService {
       vibrancy: 'sidebar',
       visualEffectState: 'active',
       titleBarStyle: 'hidden',
-      titleBarOverlay: nativeTheme.shouldUseDarkColors ? titleBarOverlayDark : titleBarOverlayLight,
+      titleBarOverlay: false,
       backgroundColor: isMac ? undefined : nativeTheme.shouldUseDarkColors ? '#181818' : '#FFFFFF',
       darkTheme: nativeTheme.shouldUseDarkColors,
       trafficLightPosition: { x: 8, y: 12 },
